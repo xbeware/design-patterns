@@ -2,20 +2,19 @@ package clase;
 
 import interfete.IPelicula;
 
-public class FilmAdaptat implements IPelicula{
-
-	Film film;
-	
-	public FilmAdaptat(Film film)
-	{	this.film = film; }
-	
-	public void play() {	
-		film.porneste();
+public class FilmAdaptat implements IPelicula {
+	private Film _film;
+	public FilmAdaptat(Film film) {
+		_film=film;
+	}
+	@Override
+	public void play() {
+		_film.porneste();
 	}
 
+	@Override
 	public void stop() {
-		film.opreste();
-		
+		_film.opreste();
 	}
 
 }

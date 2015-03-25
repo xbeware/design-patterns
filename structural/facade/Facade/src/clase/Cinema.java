@@ -1,16 +1,24 @@
 package clase;
 
 public class Cinema {
-
 	private Sala sala;
 	private Film film;
+	private Public publicul;
 	
-	public void difuzareFilmInSala(String sala, String film) {
-		this.sala = new Sala(sala);
-		this.film = new Film(film);
-		this.film.selectFilm();
-		this.sala.openDoor();
-		this.film.playFilm();
+	public Cinema() {
+		
+	}
+	
+	public void difuzareFilmInSala(String numeSala,String numeFilm){
+		sala=new Sala(numeSala);
+		publicul=new Public(3);
+		film=new Film(numeFilm);
+		sala.deschideUsa();
+		sala.aprindeLumina();
+		publicul.publiculIntraInSala();
+		sala.inchideUsa();
+		sala.stingeLumina();
+		film.play();		
 	}
 
 }

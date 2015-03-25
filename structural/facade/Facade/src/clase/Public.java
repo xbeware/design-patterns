@@ -1,19 +1,32 @@
 package clase;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Vector;
 
 public class Public {
-
-	ArrayList<Persoana> list = new ArrayList<>();
+	private int nrPersoane;
+	private ArrayList<Persoana> persoane;
 	
-	public void add(Persoana p) {
-		list.add(p);
-	}
-	
-	public void enter() {
-		for (int i = 0; i < list.size(); i++) {
-			Persoana p = list.get(i);
-			p.walk();
+	public Public(int _nrPersoane){
+		nrPersoane=_nrPersoane;
+		persoane=new ArrayList<Persoana>();
+		for(int i=0;i<nrPersoane;i++){
+			persoane.add(new Persoana("P"+(i+1)));
 		}
 	}
+	
+	public void publiculIntraInSala(){
+		System.out.println("Publicul intra in sala");
+		for(int i=0;i<nrPersoane;i++){
+			persoane.get(i).merge();
+		}
+	}
+	public void publiculIeseDinSala(){
+		System.out.println("Publicul iese din sala");
+		for(int i=0;i<nrPersoane;i++){
+			persoane.get(i).merge();
+		}
+	}
+
 }
